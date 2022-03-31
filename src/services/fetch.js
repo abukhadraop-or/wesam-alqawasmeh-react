@@ -8,13 +8,12 @@
  *
  * @returns Promise fulfilled with response data.
  */
-
-const useFetch = async (url, data = null, method = "GET", headers = {}) => {
+const fetchData = async (url, data = null, method = 'GET', headers = {}) => {
   try {
     const res = await fetch(url, {
-      method,
       body: data ? JSON.stringify(data) : data,
       headers,
+      method,
     });
 
     const resData = await res.json();
@@ -26,4 +25,4 @@ const useFetch = async (url, data = null, method = "GET", headers = {}) => {
   }
 };
 
-export default useFetch;
+export default fetchData;

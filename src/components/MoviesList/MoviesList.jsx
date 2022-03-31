@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import useFetch from "../../../hooks/use-fetch";
-import styles from "./moviesList.styles";
-import DonutsProgressBar from "./DonutsProgressBar";
-import useDate from "../../../hooks/use-date";
-import BlurSection from "./BlurSection";
-
-const {
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import fetchData from 'services/fetch';
+import {
   BrokenImg,
   BrokenImgContainer,
   MovieCard,
@@ -16,39 +11,41 @@ const {
   MovieDescription,
   MovieTitle,
   ReleaseDate,
-} = styles;
+} from 'components/MoviesList/movies-list-styles';
+import DonutsProgressBar from 'components/DonutsProgressBar/DonutsProgressBar';
+import formatDate from 'services/date-format';
+import BlurSection from 'components/BlurSection/BlurSection';
 
 /**
  * Create MoviesList component.
  *
- * @param {Object} props.sortBy  String to change movies sort.
+ *  @param {Object} props Props.
+ * @param {String} props.sortBy  String to change movies sort.
  *
  * @returns {JSX.Element}
  */
-
 function MoviesList({ sortBy }) {
   const [movies, setMovies] = useState([]);
 
   /**
    * Handle side effects when sortBy prop change (to Change moviesList state).
    */
-
   useEffect(() => {
     (async () => {
-      const res = await useFetch(
+      const res = await fetchData(
         `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&region=US&sort_by=${sortBy}&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
       );
 
       const moviesList = res.results.map((item) => {
         const itemObj = {
           id: item.id,
-          title: item.original_title,
-          overview: item.overview,
           imageUrl: item.poster_path
             ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
             : null,
+          overview: item.overview,
           rate: item.vote_average,
-          release_date: useDate(item.release_date),
+          release_date: formatDate(item.release_date),
+          title: item.title,
         };
         return itemObj;
       });

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import MoviesList from "./MoviesList/MoviesList";
-import Sort from "./Sort/Sort";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import MoviesList from 'components/MoviesList/MoviesList';
+import Sort from 'components/Sort/Sort';
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -33,7 +33,7 @@ const Container = styled.div`
  */
 
 function Main() {
-  const [sortBy, setSortBy] = useState("popularity.desc");
+  const [sortBy, setSortBy] = useState('popularity.desc');
 
   const sortChangeHandler = (sort) => {
     setSortBy(sort);

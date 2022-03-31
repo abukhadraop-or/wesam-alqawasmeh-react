@@ -1,15 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./menu.styles";
-
-const {
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
   DropDown,
   Login,
   MenuContainer,
   MenuItem,
   MenuItemsContainer,
   SecondaryLi,
-} = styles;
+} from 'components/Menu/menu-styles';
 
 /**
  * Create Menu element.
@@ -18,10 +16,7 @@ const {
  *
  * @returns {JSX.Element}
  */
-
 function Menu({ showMenu }) {
-  // const [showMenuList, setShowMenuList] = useState(false)
-
   return (
     <MenuContainer showMenu={showMenu}>
       <MenuItemsContainer>

@@ -1,16 +1,16 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const MenuContainer = styled.div`
-  backdrop-filter: blur(20px);
+export const MenuContainer = styled.div`
+  backdrop-filter: blur(1.25rem);
   background-color: #032541e5;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  left: ${(props) => (props.showMenu ? "0" : "-90%")};
-  min-height: calc(100vh - 64px);
-  padding: 20px 30px;
+  gap: 1.25rem;
+  left: ${(props) => (props.showMenu ? '0' : '-90%')};
+  min-height: calc(100vh - 4rem);
+  padding: 1.25rem 1.875rem;
   position: fixed;
-  top: 64px;
+  top: 4rem;
   transition: ease 0.4s;
   width: 90%;
 
@@ -19,68 +19,59 @@ const MenuContainer = styled.div`
     backdrop-filter: unset;
     background: none;
     flex-direction: row;
-    gap: 20px;
+    gap: 1.25rem;
     justify-content: space-between;
     left: 0;
-    min-height: 64px;
+    min-height: 4rem;
     padding: 0;
     position: relative;
     top: 0;
   }
 `;
 
-const MenuItemsContainer = styled.div`
+export const MenuItemsContainer = styled.div`
   flex: none;
 
   @media only screen and (min-width: 768px) {
     align-items: center;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1.25rem;
     justify-content: space-between;
   }
 `;
 
-const MenuItem = styled.h3`
+export const MenuItem = styled.h3`
   color: #ffffff;
   cursor: pointer;
-  display: ${(props) => (props.desktop ? "none" : "block")};
+  display: ${(props) => (props.desktop ? 'none' : 'block')};
   font-size: 1.3 em;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   max-height: 100%;
   position: relative;
 
   @media only screen and (min-width: 768px) {
     display: block;
-    font-size: 15px;
+    font-size: 0.938rem;
     margin-bottom: 0;
   }
 `;
 
-const SecondaryLi = styled.li`
+export const SecondaryLi = styled.li`
   color: #ffffff99;
-  font-size: 13px;
+  font-size: 0.813rem;
   font-weight: bold;
   list-style: none;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 `;
 
-const DropDown = styled.div`
+export const DropDown = styled.div`
   @media only screen and (min-width: 768px) {
     display: none;
   }
 `;
 
-const Login = styled(SecondaryLi)`
+export const Login = styled(SecondaryLi)`
   margin-bottom: 0;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 `;
-
-export default {
-  DropDown,
-  Login,
-  MenuContainer,
-  MenuItem,
-  MenuItemsContainer,
-  SecondaryLi,
-};

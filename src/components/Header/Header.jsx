@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-import styles from "./header.styles";
-import Menu from "./Menu";
-
-const {
+import React, { useState } from 'react';
+import {
   DesktopLogo,
   HeaderContainer,
   HeaderLink,
@@ -13,14 +10,14 @@ const {
   PhoneLogoSection,
   SearchIcon,
   SearchSection,
-} = styles;
+} from 'components/Header/header-styles';
+import Menu from 'components/Menu/Menu';
 
 /**
  * Create Header component.
  *
  * @returns {JSX.Element}
  */
-
 function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
@@ -32,14 +29,25 @@ function Header() {
     setShowMenu((prevState) => !prevState);
   };
 
+  // Debounce function for window scrolling.
+  function debounce(func, timeout = 100) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, timeout);
+    };
+  }
+
   // to show menu depending on scrolling
   let prevScroll = window.pageYOffset;
   /**
    * Handle showHeader state.
    */
-  window.onscroll = () => {
+  window.onscroll = debounce(() => {
     const currentScroll = window.pageYOffset;
-
+    console.log('scroll');
     if (currentScroll <= prevScroll) {
       setShowHeader(true);
     } else {
@@ -47,12 +55,12 @@ function Header() {
     }
 
     prevScroll = currentScroll;
-  };
+  });
 
   return (
     <HeaderContainer showHeader={showHeader}>
       <HeaderSection>
-        {" "}
+        {' '}
         <Icon
           mobileIcon
           onClick={showMenuHandler}

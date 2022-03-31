@@ -1,9 +1,5 @@
-import React, { useState } from "react";
-
-import styles from "./blurSection.styles";
-
-const {
-  Arrow,
+import React, { useState } from 'react';
+import {
   BlurEffect,
   Container,
   Heading,
@@ -13,25 +9,36 @@ const {
   ShowMoreMenu,
   SignupSection,
   FakeDiv,
-} = styles;
+} from 'components/BlurSection/blur-section-styles';
+import { Arrow } from 'components/Sort/sort-styles';
 
 /**
  * Create BlurSection component to apply blur effect on cards.
  *
  * @returns {JSX.Element}
  */
-
 function BlurSection() {
   const [showBlur, setShowBlur] = useState(false);
+
+  // Debounce function for window scrolling.
+  function debounce(func, timeout = 50) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, timeout);
+    };
+  }
 
   /**
    * Handle showBlur state on screen scroll.
    */
-  window.onscroll = () => {
+  window.onscroll = debounce(() => {
     if (showBlur) {
       setShowBlur(false);
     }
-  };
+  });
 
   /**
    * Handle showBlur state on click.
@@ -56,7 +63,7 @@ function BlurSection() {
           <Heading>Want to rate or add this item to a list?</Heading>
 
           <SectionLink href="#">
-            Login{" "}
+            Login{' '}
             <Arrow src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-224-chevron-right-d1f88a6c15e68190c3b47e1ee4f39fe47f4b69f4966ca7c250c2e14cfa689a04.svg" />
           </SectionLink>
         </LoginSection>

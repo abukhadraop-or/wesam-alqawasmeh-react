@@ -1,75 +1,65 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const FooterContainer = styled.div`
+export const FooterContainer = styled.div`
   background-color: #032541;
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 1.875rem;
   justify-content: flex-start;
-  padding: 40px 20px;
+  padding: 2.5rem 1.25rem;
   width: 100vw;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    padding: 80px 10px;
+    padding: 5rem 0.063rem;
     justify-content: center;
   }
 `;
 
-const FooterItemList = styled.ul`
+export const FooterItemList = styled.ul`
   width: fit-content;
 `;
 
-const ListItem = styled.li`
+export const ListItem = styled.li`
   color: #ffffffdd;
   cursor: pointer;
-  padding-bottom: 7px;
+  padding-bottom: 0.438rem;
 `;
 
-const ListTitle = styled.h3`
-  margin-bottom: 10px;
+export const ListTitle = styled.h3`
+  margin-bottom: 0.625rem;
   font-size: 1.2em;
 `;
 
-const FooterButton = styled.button`
+export const FooterButton = styled.button`
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 0.313rem;
   border: none;
   color: #235ea7;
   cursor: pointer;
   font-size: 1.2em;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   width: fit-content;
 `;
 
-const FooterLogo = styled.img`
+export const FooterLogo = styled.img`
   align-self: flex-end;
   cursor: pointer;
   display: none;
-  height: 150px;
+  height: 9.375rem;
   position: relative;
-  top: -36px;
-  width: 150px;
+  top: -2.25rem;
+  width: 9.375rem;
 
   @media screen and (min-width: 768px) {
     display: inline-block;
   }
 `;
 
-const HeroSection = styled.div`
+export const HeroSection = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
 `;
-
-export default {
-  FooterButton,
-  FooterContainer,
-  FooterItemList,
-  FooterLogo,
-  HeroSection,
-  ListItem,
-  ListTitle,
-};

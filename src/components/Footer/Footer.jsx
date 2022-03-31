@@ -1,7 +1,5 @@
-import React from "react";
-import styles from "./footer.styles";
-
-const {
+import React from 'react';
+import {
   FooterButton,
   FooterContainer,
   FooterItemList,
@@ -9,14 +7,13 @@ const {
   HeroSection,
   ListItem,
   ListTitle,
-} = styles;
+} from 'components/Footer/footer-styles';
 
 /**
  *  Create Footer component.
  *
  * @returns {JSX.Element}
  */
-
 function Footer() {
   return (
     <FooterContainer>

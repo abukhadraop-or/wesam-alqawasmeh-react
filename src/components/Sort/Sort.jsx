@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import CardContainer from "../../Layout/CardContainer";
-import styles from "./sort.styles";
-
-const {
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import CardContainer from 'components/Layout/card-container';
+import {
   Arrow,
   CardHeader,
   Container,
@@ -16,19 +14,19 @@ const {
   SubMenu,
   SubMenuTitle,
   DownArrow,
-} = styles;
+} from 'components/Sort/sort-styles';
 
 /**
  * Create Sort component.
  *
- * @param {Object} props.sortChangeHandler Function to handle sortBy state in Main component.
+ * @param {Object} props Props.
+ * @param {Function} props.sortChangeHandler Function to handle sortBy state in Main component.
  *
  * @returns {JSX.Element}
  */
-
 function Sort({ sortChangeHandler }) {
   const [showSubMenu, setShowSubMenu] = useState(false);
-  const [sortMovies, setSortMovies] = useState("");
+  const [sortMovies, setSortMovies] = useState('');
 
   /**
    * Handle sortMovies state.
@@ -44,7 +42,7 @@ function Sort({ sortChangeHandler }) {
    */
   const searchHandler = () => {
     sortChangeHandler(sortMovies);
-    setSortMovies("");
+    setSortMovies('');
   };
 
   /**
@@ -101,7 +99,7 @@ function Sort({ sortChangeHandler }) {
         </CardHeader>
       </CardContainer>
 
-      {sortMovies === "" ? (
+      {sortMovies === '' ? (
         <DisabledSearchButton disabled>Search</DisabledSearchButton>
       ) : (
         <SearchButton onClick={searchHandler}>Search</SearchButton>
