@@ -8,7 +8,6 @@ import Main from 'components/Main/Main';
  *
  * @returns {JSX.Element}
  */
-
 function App() {
   return (
     <>

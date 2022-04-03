@@ -2,27 +2,28 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import MoviesList from 'components/MoviesList/MoviesList';
 import Sort from 'components/Sort/Sort';
+import { Tab, XLDesk } from 'services/breakpoints';
 
 const Container = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  margin-top: 64px;
+  gap: 2.5rem;
+  margin-top: 4rem;
   overflow-x: hidden;
-  padding: 20px;
+  padding: 1.25rem;
   width: 100%;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${Tab}) {
     flex-direction: row;
-    gap: 20px;
+    gap: 1.25rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 50px 40px;
+    padding: 3.125rem 2.5rem;
   }
 
-  @media (min-width: 1400px) {
-    max-width: 1400px;
+  @media (min-width: ${XLDesk}) {
+    max-width: 87.5rem;
   }
 `;
 
@@ -31,13 +32,10 @@ const Container = styled.div`
  *
  * @returns {JSX.Element}
  */
-
 function Main() {
   const [sortBy, setSortBy] = useState('popularity.desc');
 
-  const sortChangeHandler = (sort) => {
-    setSortBy(sort);
-  };
+  const sortChangeHandler = (sort) => setSortBy(sort);
 
   return (
     <Container>

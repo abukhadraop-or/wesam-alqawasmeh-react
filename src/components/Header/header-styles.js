@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Tab, XLDesk } from 'services/breakpoints';
 
 export const HeaderContainer = styled.div`
   align-items: center;
@@ -9,16 +10,16 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   padding: 0 1.25rem;
   position: fixed;
-  top: ${(props) => (props.showHeader ? '0' : '-64px')};
+  top: ${(props) => (props.showHeader ? '0' : '-4rem')};
   transition: ease 0.3s;
   width: 100vw;
   z-index: 300;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     padding: 0 2.5rem;
   }
 
-  @media only screen and (min-width: 1400px) {
+  @media only screen and (min-width: ${XLDesk}) {
     padding: 0 calc(2.5rem + (100vw - 87.5rem) / 2);
   }
 `;
@@ -29,7 +30,7 @@ export const HeaderSection = styled.div`
   max-height: 4rem;
   width: 33%;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     width: fit-content;
     gap: 0.94rem;
   }
@@ -40,17 +41,17 @@ export const SearchSection = styled.div`
   justify-content: flex-end;
   width: 33%;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     gap: 0.94rem;
     width: fit-content;
   }
 `;
 
 export const DesktopLogo = styled.img`
-  display: none;
   cursor: pointer;
+  display: none;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     display: inline-block;
     width: 8.75rem;
   }
@@ -61,7 +62,7 @@ export const PhoneLogoSection = styled.div`
   justify-content: center;
   width: 33%;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     display: none;
   }
 `;
@@ -72,7 +73,7 @@ export const Icon = styled.img`
   filter: invert(1);
   width: 1.57rem;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     display: ${(props) => (props.mobileIcon ? 'none' : 'inline-block')};
     filter: invert(0);
   }
@@ -83,19 +84,19 @@ export const SearchIcon = styled.img`
   margin-left: 0.625rem;
   width: 1.57rem;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${Tab}) {
     margin-left: 0;
   }
 `;
 
 export const HeaderLink = styled.span`
-  display: none;
   align-items: center;
   cursor: pointer;
+  display: none;
   justify-content: center;
   width: fit-content;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${Tab}) {
     display: flex;
   }
 `;

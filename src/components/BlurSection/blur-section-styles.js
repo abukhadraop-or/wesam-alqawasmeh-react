@@ -1,52 +1,53 @@
 import styled from 'styled-components';
 import CardContainer from 'components/Layout/card-container';
+import { Tab } from 'services/breakpoints';
 
 export const ShowMoreIcon = styled.img`
-  width: 1.25rem;
-  position: absolute;
-  top: 0.94rem;
-  right: 0.94rem;
   opacity: 0.7;
+  position: absolute;
+  right: 0.94rem;
+  top: 0.94rem;
+  width: 1.25rem;
 `;
 
 export const BlurEffect = styled.div`
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(1.25rem);
-  display: ${(props) => (props.showBlur ? 'block' : 'none')};
+  background-color: #0000007f;
   border-radius: 0.625rem;
+  display: ${(props) => (props.showBlur ? 'block' : 'none')};
+  height: 100%;
+  width: 100%;
+  z-index: 100;
 `;
 
 export const Container = styled.div`
-  position: absolute;
   display: none;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
   z-index: 50;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${Tab}) {
     display: block;
   }
 `;
 
 export const ShowMoreMenu = styled(CardContainer)`
-  position: absolute;
-  top: 2.5rem;
-  right: 0.94rem;
-  width: 17.5rem;
   display: ${(props) => (props.showBlur ? 'flex' : 'none')};
   flex-direction: column;
+  position: absolute;
+  right: 0.94rem;
+  top: 2.5rem;
+  width: 17.5rem;
 `;
 
 export const LoginSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1.25rem;
+  justify-content: center;
   padding: 0.625rem;
   width: 100%;
 `;
@@ -60,20 +61,20 @@ export const Heading = styled.h3`
 `;
 
 export const SectionLink = styled.span`
-  display: flex;
-  gap: 0.94rem;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 0.9em;
   align-items: center;
+  color: #00000099;
+  display: flex;
+  font-size: 0.9em;
+  gap: 0.94rem;
 `;
 
 export const FakeDiv = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 150;
   cursor: default;
   display: ${(props) => (props.showBlur ? 'block' : 'none')};
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 150;
 `;

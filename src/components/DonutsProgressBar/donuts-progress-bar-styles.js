@@ -1,31 +1,32 @@
 import styled from 'styled-components';
+import { Tab } from 'services/breakpoints';
 
 export const CircleWrap = styled.div`
   display: none;
 
-  @media screen and (min-width: 768px) {
-    width: 2.4rem;
-    height: 2.4rem;
-    position: absolute;
-    top: -1.25rem;
+  @media screen and (min-width: ${Tab}) {
+    align-items: center;
     background: #081c23;
     border-radius: 50%;
-    padding: 0.125rem;
     display: flex;
+    height: 2.4rem;
     justify-content: center;
-    align-items: center;
+    padding: 0.125rem;
+    position: absolute;
+    top: -1.25rem;
+    width: 2.4rem;
   }
 `;
 
 export const Circle = styled.div`
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 0.125rem;
   position: relative;
   width: 100%;
-  height: 100%;
-  display: flex;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  padding: 0.125rem;
 
   background-image: ${(props) =>
     `conic-gradient(#61d17a ${(360 / 100) * (props.rate * 10)}deg, #29383d ${
@@ -34,14 +35,14 @@ export const Circle = styled.div`
 `;
 
 export const Percent = styled.p`
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  background: #081c23;
-  color: #61d17a;
-  text-align: center;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  background: #081c23;
+  border-radius: 50%;
+  color: #61d17a;
+  display: flex;
   font-size: 0.7em;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 `;

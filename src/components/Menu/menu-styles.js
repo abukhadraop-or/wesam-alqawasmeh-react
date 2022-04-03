@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Tab } from 'services/breakpoints';
 
 export const MenuContainer = styled.div`
   backdrop-filter: blur(1.25rem);
@@ -14,7 +15,7 @@ export const MenuContainer = styled.div`
   transition: ease 0.4s;
   width: 90%;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     align-items: center;
     backdrop-filter: unset;
     background: none;
@@ -32,7 +33,7 @@ export const MenuContainer = styled.div`
 export const MenuItemsContainer = styled.div`
   flex: none;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -50,7 +51,7 @@ export const MenuItem = styled.h3`
   max-height: 100%;
   position: relative;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     display: block;
     font-size: 0.938rem;
     margin-bottom: 0;
@@ -66,7 +67,7 @@ export const SecondaryLi = styled.li`
 `;
 
 export const DropDown = styled.div`
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     display: none;
   }
 `;

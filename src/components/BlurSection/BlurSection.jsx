@@ -43,9 +43,7 @@ function BlurSection() {
   /**
    * Handle showBlur state on click.
    */
-  const handleBlur = () => {
-    setShowBlur((prevState) => !prevState);
-  };
+  const handleBlur = () => setShowBlur((prevState) => !prevState);
 
   return (
     <Container>

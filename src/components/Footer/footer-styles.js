@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Tab } from 'services/breakpoints';
 
 export const FooterContainer = styled.div`
   background-color: #032541;
@@ -10,10 +11,10 @@ export const FooterContainer = styled.div`
   padding: 2.5rem 1.25rem;
   width: 100vw;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${Tab}) {
     flex-direction: row;
-    padding: 5rem 0.063rem;
     justify-content: center;
+    padding: 5rem 0.063rem;
   }
 `;
 
@@ -28,8 +29,8 @@ export const ListItem = styled.li`
 `;
 
 export const ListTitle = styled.h3`
-  margin-bottom: 0.625rem;
   font-size: 1.2em;
+  margin-bottom: 0.625rem;
 `;
 
 export const FooterButton = styled.button`
@@ -53,7 +54,7 @@ export const FooterLogo = styled.img`
   top: -2.25rem;
   width: 9.375rem;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${Tab}) {
     display: inline-block;
   }
 `;

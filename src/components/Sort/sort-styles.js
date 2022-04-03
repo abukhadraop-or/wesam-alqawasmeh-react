@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { Tab } from 'services/breakpoints';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${Tab}) {
     width: 16.25rem;
   }
 `;
@@ -16,14 +17,14 @@ export const SectionHeader = styled.h2`
 
 export const CardHeader = styled.div`
   align-items: center;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   padding: 0.94rem;
-  cursor: pointer;
 `;
 
 export const SubMenu = styled(CardHeader)`
-  border-top: 0.63rem solid #eeeeee;
+  border-top: 0.063rem solid #eeeeee;
   flex-direction: column;
 `;
 
@@ -41,30 +42,30 @@ export const Arrow = styled.img`
 `;
 
 export const SelectionContainer = styled.span`
+  align-items: center;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  cursor: pointer;
   position: relative;
+  width: 100%;
 `;
 
 export const Select = styled.select`
+  appearance: none;
   background-color: #e4e7eb;
   border-radius: 0.625rem;
+  border: none;
   color: #212529;
+  outline: 0;
   padding: 0.94rem;
   width: 100%;
-  outline: 0;
-  border: none;
-  appearance: none;
 `;
 
 export const DownArrow = styled.p`
-  transform: rotate(270deg);
   font-size: 0.625rem;
   position: absolute;
   right: 0.94rem;
+  transform: rotate(270deg);
 `;
 
 export const SearchButton = styled.button`

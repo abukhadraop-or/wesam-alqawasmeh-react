@@ -25,12 +25,10 @@ function Header() {
   /**
    * Handle showMenu state.
    */
-  const showMenuHandler = () => {
-    setShowMenu((prevState) => !prevState);
-  };
+  const showMenuHandler = () => setShowMenu((prevState) => !prevState);
 
   // Debounce function for window scrolling.
-  function debounce(func, timeout = 100) {
+  function debounce(func, timeout = 50) {
     let timer;
     return (...args) => {
       clearTimeout(timer);
@@ -47,7 +45,7 @@ function Header() {
    */
   window.onscroll = debounce(() => {
     const currentScroll = window.pageYOffset;
-    console.log('scroll');
+
     if (currentScroll <= prevScroll) {
       setShowHeader(true);
     } else {

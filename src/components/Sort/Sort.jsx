@@ -33,9 +33,7 @@ function Sort({ sortChangeHandler }) {
    *
    * @param {Object} e  Event Object for Select element.
    */
-  const changeSelectionHandler = (e) => {
-    setSortMovies(e.target.value);
-  };
+  const changeSelectionHandler = (e) => setSortMovies(e.target.value);
 
   /**
    * Handle sortBy state in Main component and sortMovies state.
@@ -48,9 +46,7 @@ function Sort({ sortChangeHandler }) {
   /**
    * Handle showSubMenu state.
    */
-  const subMenuHandler = () => {
-    setShowSubMenu((prevState) => !prevState);
-  };
+  const subMenuHandler = () => setShowSubMenu((prevState) => !prevState);
 
   return (
     <Container>
