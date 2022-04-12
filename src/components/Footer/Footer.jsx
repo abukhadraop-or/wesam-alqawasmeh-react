@@ -12,7 +12,7 @@ import {
 /**
  *  Create Footer component.
  *
- * @returns {JSX.Element}
+ * @return {JSX.Element}
  */
 function Footer() {
   return (

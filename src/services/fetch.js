@@ -6,23 +6,21 @@
  * @param {String} [method = "GET"] Request method.
  * @param {Object} [headers = {}] Object contains request headers.
  *
- * @returns Promise fulfilled with response data.
+ * @return Promise fulfilled with response data.
  */
 const fetchData = async (url, data = null, method = 'GET', headers = {}) => {
-  try {
-    const res = await fetch(url, {
-      body: data ? JSON.stringify(data) : data,
-      headers,
-      method,
-    });
+  const res = await fetch(url, {
+    body: data ? JSON.stringify(data) : data,
+    headers,
+    method,
+  });
 
-    const resData = await res.json();
+  const resData = await res.json();
 
-    return resData;
-  } catch (e) {
-    console.log(e);
-    return [];
-  }
+  return resData;
 };
 
-export default fetchData;
+export const get = (url, headers = {}) => fetchData(url, null, 'GET', headers);
+
+export const post = (url, body, headers = {}) =>
+  fetchData(url, body, 'POST', headers);

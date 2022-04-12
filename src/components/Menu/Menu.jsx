@@ -14,7 +14,7 @@ import {
  *
  * @param {Boolean} showMenu Boolean to manage menu visibility.
  *
- * @returns {JSX.Element}
+ * @return {JSX.Element}
  */
 function Menu({ showMenu }) {
   return (

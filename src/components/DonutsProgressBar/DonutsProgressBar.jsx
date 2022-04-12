@@ -12,7 +12,7 @@ import {
  * @param {Object} props Props.
  * @param {Number} props.rate Number holds movie rating.
  *
- * @returns {JSX.Element}
+ * @return {JSX.Element}
  */
 function DonutsProgressBar({ rate }) {
   return (

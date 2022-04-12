@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Tab } from 'services/breakpoints';
+import { Tab } from 'styles/breakpoints';
 
 export const CircleWrap = styled.div`
   display: none;

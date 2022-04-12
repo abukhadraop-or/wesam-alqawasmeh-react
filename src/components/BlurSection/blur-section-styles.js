@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import CardContainer from 'components/Layout/card-container';
-import { Tab } from 'services/breakpoints';
+import { Tab } from 'styles/breakpoints';
 
 export const ShowMoreIcon = styled.img`
   opacity: 0.7;

@@ -11,25 +11,15 @@ import {
   FakeDiv,
 } from 'components/BlurSection/blur-section-styles';
 import { Arrow } from 'components/Sort/sort-styles';
+import debounce from 'utils/debounce';
 
 /**
  * Create BlurSection component to apply blur effect on cards.
  *
- * @returns {JSX.Element}
+ * @return {JSX.Element}
  */
 function BlurSection() {
   const [showBlur, setShowBlur] = useState(false);
-
-  // Debounce function for window scrolling.
-  function debounce(func, timeout = 50) {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        func.apply(this, args);
-      }, timeout);
-    };
-  }
 
   /**
    * Handle showBlur state on screen scroll.
@@ -38,7 +28,7 @@ function BlurSection() {
     if (showBlur) {
       setShowBlur(false);
     }
-  });
+  }, 50);
 
   /**
    * Handle showBlur state on click.
@@ -46,17 +36,22 @@ function BlurSection() {
   const handleBlur = () => setShowBlur((prevState) => !prevState);
 
   return (
-    <Container>
-      <FakeDiv onClick={handleBlur} showBlur={showBlur} />
+    <Container data-testid="container">
+      <FakeDiv
+        data-testid="fake-div"
+        onClick={handleBlur}
+        showBlur={showBlur}
+      />
 
       <ShowMoreIcon
+        data-testid="show-more-icon"
         onClick={handleBlur}
         src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-947-circle-more-white-4c440dfc1b0e626c70f4853dbbce9c4d1f2c5d8f3e05a7d3df47881cbd816adf.svg"
       />
 
       <BlurEffect showBlur={showBlur} />
 
-      <ShowMoreMenu showBlur={showBlur}>
+      <ShowMoreMenu showBlur={showBlur} data-testid="hidden-menu">
         <LoginSection>
           <Heading>Want to rate or add this item to a list?</Heading>
 

@@ -12,11 +12,12 @@ import {
   SearchSection,
 } from 'components/Header/header-styles';
 import Menu from 'components/Menu/Menu';
+import debounce from 'utils/debounce';
 
 /**
  * Create Header component.
  *
- * @returns {JSX.Element}
+ * @return {JSX.Element}
  */
 function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -27,18 +28,6 @@ function Header() {
    */
   const showMenuHandler = () => setShowMenu((prevState) => !prevState);
 
-  // Debounce function for window scrolling.
-  function debounce(func, timeout = 50) {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        func.apply(this, args);
-      }, timeout);
-    };
-  }
-
-  // to show menu depending on scrolling
   let prevScroll = window.pageYOffset;
   /**
    * Handle showHeader state.
@@ -53,7 +42,7 @@ function Header() {
     }
 
     prevScroll = currentScroll;
-  });
+  }, 50);
 
   return (
     <HeaderContainer showHeader={showHeader}>

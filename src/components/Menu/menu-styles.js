@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Tab } from 'services/breakpoints';
+import { Tab } from 'styles/breakpoints';
 
 export const MenuContainer = styled.div`
   backdrop-filter: blur(1.25rem);

@@ -22,7 +22,7 @@ import {
  * @param {Object} props Props.
  * @param {Function} props.sortChangeHandler Function to handle sortBy state in Main component.
  *
- * @returns {JSX.Element}
+ * @return {JSX.Element}
  */
 function Sort({ sortChangeHandler }) {
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -51,8 +51,8 @@ function Sort({ sortChangeHandler }) {
   return (
     <Container>
       <h2>Popular Movies</h2>
-      <CardContainer>
-        <CardHeader onClick={subMenuHandler}>
+      <CardContainer test-id="card">
+        <CardHeader onClick={subMenuHandler} test-id="sort-card-header">
           <SectionHeader>Sort</SectionHeader>
           <Arrow
             showSubMenu={showSubMenu}
@@ -60,10 +60,10 @@ function Sort({ sortChangeHandler }) {
           />
         </CardHeader>
         {showSubMenu && (
-          <SubMenu>
+          <SubMenu test-id="sub-menu">
             <SubMenuTitle>Sort Results By</SubMenuTitle>
             <SelectionContainer>
-              <Select onChange={changeSelectionHandler}>
+              <Select onChange={changeSelectionHandler} test-id="select">
                 <Option value="popularity.desc">Popularity Descending</Option>
                 <Option value="popularity.asc">Popularity Ascending</Option>
                 <Option value="vote_average.desc">Rating Descending</Option>
@@ -81,14 +81,14 @@ function Sort({ sortChangeHandler }) {
         )}
       </CardContainer>
 
-      <CardContainer>
+      <CardContainer test-id="card">
         <CardHeader>
           <SectionHeader>Filters</SectionHeader>
           <Arrow src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-224-chevron-right-d1f88a6c15e68190c3b47e1ee4f39fe47f4b69f4966ca7c250c2e14cfa689a04.svg" />
         </CardHeader>
       </CardContainer>
 
-      <CardContainer>
+      <CardContainer test-id="card">
         <CardHeader>
           <SectionHeader>Where To Watch</SectionHeader>
           <Arrow src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-224-chevron-right-d1f88a6c15e68190c3b47e1ee4f39fe47f4b69f4966ca7c250c2e14cfa689a04.svg" />
@@ -96,9 +96,13 @@ function Sort({ sortChangeHandler }) {
       </CardContainer>
 
       {sortMovies === '' ? (
-        <DisabledSearchButton disabled>Search</DisabledSearchButton>
+        <DisabledSearchButton disabled test-id="disabled-button">
+          Search
+        </DisabledSearchButton>
       ) : (
-        <SearchButton onClick={searchHandler}>Search</SearchButton>
+        <SearchButton onClick={searchHandler} test-id="search-button">
+          Search
+        </SearchButton>
       )}
     </Container>
   );

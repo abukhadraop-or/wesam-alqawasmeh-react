@@ -3,7 +3,7 @@
  *
  * @param {String} date movie release date String.
  *
- * @returns {String}
+ * @return {String}
  */
 const formatDate = (date) => {
   const monthsObj = {

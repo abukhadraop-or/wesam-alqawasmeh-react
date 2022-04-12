@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import CardContainer from 'components/Layout/card-container';
-import { Tab, Desk, LDesk, XLDesk } from 'services/breakpoints';
+import { Tab, Desk, LDesk, XLDesk } from 'styles/breakpoints';
 
 export const MovieCardsContainer = styled.div`
   display: flex;

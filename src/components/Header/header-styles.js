@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Tab, XLDesk } from 'services/breakpoints';
+import { Tab, XLDesk } from 'styles/breakpoints';
 
 export const HeaderContainer = styled.div`
   align-items: center;
