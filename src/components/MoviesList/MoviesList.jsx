@@ -53,7 +53,7 @@ function MoviesList({ sortBy }) {
 
         setMovies(moviesList);
       } catch (error) {
-        throw new Error(error);
+        console.log(error);
       }
     })();
   }, [sortBy]);

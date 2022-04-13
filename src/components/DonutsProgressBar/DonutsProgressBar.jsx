@@ -16,7 +16,7 @@ import {
  */
 function DonutsProgressBar({ rate }) {
   return (
-    <CircleWrap>
+    <CircleWrap data-testid="progress">
       <Circle rate={rate}>
         <Percent>{rate ? `${rate * 10}%` : `NR`}</Percent>
       </Circle>

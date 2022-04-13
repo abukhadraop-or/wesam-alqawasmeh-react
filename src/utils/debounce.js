@@ -11,7 +11,7 @@ function debounce(func, timeout) {
   return (...args) => {
     clearTimeout(timer);
     timer = setTimeout(() => {
-      func.apply(this, args);
+      func(args);
     }, timeout);
   };
 }

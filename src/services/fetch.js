@@ -8,7 +8,12 @@
  *
  * @return Promise fulfilled with response data.
  */
-const fetchData = async (url, data = null, method = 'GET', headers = {}) => {
+export const fetchData = async (
+  url,
+  data = null,
+  method = 'GET',
+  headers = {}
+) => {
   const res = await fetch(url, {
     body: data ? JSON.stringify(data) : data,
     headers,
@@ -21,6 +26,3 @@ const fetchData = async (url, data = null, method = 'GET', headers = {}) => {
 };
 
 export const get = (url, headers = {}) => fetchData(url, null, 'GET', headers);
-
-export const post = (url, body, headers = {}) =>
-  fetchData(url, body, 'POST', headers);
